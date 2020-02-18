@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package auth;
+
+option go_package = "authpb";
+
+import "services/auth/messages.proto";
+
+// AuthAPI service
+service AuthAPI {
+  // Login user with email and password
+  rpc LoginUser(auth.LoginRequest) returns (auth.LoginResponse);
+}

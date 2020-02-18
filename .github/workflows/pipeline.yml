@@ -1,0 +1,27 @@
+name: "Protofiles stubs generator"
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Setup git user
+        run: bash ./cli/git-setup.sh
+
+      - name: Setup semantic-release
+        run: git clone https://github.com/jozefcipa/semantic-release.git && chmod +x ./semantic-release/bin/semantic-release.js
+
+      - name: Install semantic-release dependencies
+        run: cd ./semantic-release && npm install --only=production
+
+      - name: Start build
+        run: bash ./cli/build.sh
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}

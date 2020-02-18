@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package entities;
+
+option go_package = "entitiespb";
+
+message User {
+  string name = 1;
+  string surname = 2;
+  string email = 3;
+  string password = 4;
+}
