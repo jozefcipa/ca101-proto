@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package reminders;
+
+option go_package = "reminderspb";
+
+import "services/reminders/messages.proto";
+
+// ReminderAPI service
+service ReminderAPI {
+  rpc AddReminder (reminders.AddReminderRequest) returns (reminders.AddReminderResponse);
+
+  rpc UpdateReminder (reminders.UpdateReminderRequest) returns (reminders.UpdateReminderResponse);
+
+  rpc DeleteReminder (reminders.DeleteReminderRequest) returns (reminders.DeleteReminderResponse);
+}

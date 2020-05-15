@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package reminders;
+
+option go_package = "reminderspb";
+
+message AddReminderRequest {
+  string user_id = 1;
+  string note_id = 2;
+  string datetime = 3;
+}
+
+message UpdateReminderRequest {
+  string user_id = 1;
+  string note_id = 2;
+  string datetime = 3;
+}
+
+message DeleteReminderRequest {
+  string user_id = 1;
+  string note_id = 2;
+}
+
+message AddReminderResponse {}
+
+message UpdateReminderResponse {}
+
+message DeleteReminderResponse {}
