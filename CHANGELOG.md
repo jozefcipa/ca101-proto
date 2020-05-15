@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/jozefcipa/ca101-proto/compare/v1.0.0...v1.1.0) (2020-05-15)
+
+
+### Features
+
+* add reminders ([d4d0be8](https://github.com/jozefcipa/ca101-proto/commit/d4d0be8acf96c8b272c49a874f314262838a9e8f))
+
 # 1.0.0 (2020-02-18)
 
 
