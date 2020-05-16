@@ -33,6 +33,11 @@ function publish() {
 
   if ! git diff --exit-code >/dev/null; then
     git add .
+    git stash # Save generated content
+    git rm -r . # Delete everything so we can get rid of old files that are not in proto definitions anymore
+    git stash pop # Get back our content
+    git status
+    git add . # There might be conflicts, but that's okay, let's just stage everything now
     git commit \
       -m "Add generated version ${version} [CI]" \
       -m "${GENERATED_BY}"
