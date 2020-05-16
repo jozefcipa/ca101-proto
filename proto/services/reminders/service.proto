@@ -13,4 +13,6 @@ service ReminderAPI {
   rpc UpdateReminder (reminders.UpdateReminderRequest) returns (reminders.UpdateReminderResponse);
 
   rpc DeleteReminder (reminders.DeleteReminderRequest) returns (reminders.DeleteReminderResponse);
+
+  rpc GetUserReminders (reminders.GetUserRemindersRequest) returns (reminders.DeleteReminderResponse);
 }

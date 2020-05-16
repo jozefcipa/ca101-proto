@@ -4,16 +4,18 @@ package reminders;
 
 option go_package = "reminderspb";
 
-message AddReminderRequest {
+message Reminder {
   string user_id = 1;
   string note_id = 2;
   string datetime = 3;
 }
 
+message AddReminderRequest {
+  Reminder reminder = 1;
+}
+
 message UpdateReminderRequest {
-  string user_id = 1;
-  string note_id = 2;
-  string datetime = 3;
+  Reminder reminder = 1;
 }
 
 message DeleteReminderRequest {
@@ -21,8 +23,17 @@ message DeleteReminderRequest {
   string note_id = 2;
 }
 
+message GetUserRemindersRequest {
+  string user_id = 1;
+}
+
 message AddReminderResponse {}
 
 message UpdateReminderResponse {}
 
 message DeleteReminderResponse {}
+
+message UserRemindersResponse {
+  repeated Reminder reminder = 1;
+}
+
